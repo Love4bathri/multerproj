@@ -37,7 +37,7 @@ const SendEmail = () => {
         }, 2000);
         // Clear previous messages
         try {
-            const response = await axios.post("http://localhost:8000/api/email", data);
+            const response = await axios.post("https://multerproj-3.onrender.com/api/email", data);
             console.log("Response:", response.data);
             setMsg("Data submitted successfully");
             setData({

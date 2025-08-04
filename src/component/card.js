@@ -7,7 +7,7 @@ function Card() {
   const [selectedImage, setSelectedImage] = useState(null); // for modal
 
   useEffect(() => {
-    axios.get('http://localhost:8000/api/role')
+    axios.get('https://multerproj-3.onrender.com/api/role')
       .then(res => setCards(res.data))
       .catch(err => console.error('Error fetching data:', err));
   }, []);
@@ -20,10 +20,10 @@ function Card() {
             <div className="row g-0">
               <div className="col-md-4">
                 <img 
-                  src={`http://localhost:8000/uploads/${item.filenameDb}`} 
+                  src={`https://multerproj-3.onrender.com/uploads/${item.filenameDb}`} 
                   className="img-fluid rounded-start zoomable-img"
                   alt={item.name}
-                  onClick={() => setSelectedImage(`http://localhost:8000/uploads/${item.filenameDb}`)}
+                   onClick={() => setSelectedImage(`https://multerproj-3.onrender.com/uploads/${item.filenameDb}`)}
                 />
               </div>
               <div className="col-md-8">

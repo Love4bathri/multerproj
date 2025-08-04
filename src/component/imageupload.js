@@ -26,7 +26,7 @@ function ImageUpload() {
     data.append("img", formData.img)
     data.append("name", formData.name)
     try {
-      const upload = await axios.post("http://localhost:8000/api/role", data, {
+ const upload = await axios.post("https://multerproj-3.onrender.com/api/role", data, {
         headers: {
           "Content-Type": "multipart/form-data"
         }
