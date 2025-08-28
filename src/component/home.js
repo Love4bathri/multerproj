@@ -2,7 +2,7 @@ import React, {lazy, Suspense} from 'react';
 import ImageUpload from './imageupload';
 import SendEmail from './sendemail';
 const Card = lazy(() => import('./card'));
-import Spinner from 'react-bootstrap/Spinner';
+ 
  
 function Home() {
   return (
@@ -54,7 +54,7 @@ function Home() {
   </div>
 </div>
          <ImageUpload/>    
-          <Suspense fallback={<Spinner animation="border" variant="dark" />}>
+          <Suspense fallback={<div>Loading...</div>}>
           <Card/>
           </Suspense>
         <SendEmail/>
