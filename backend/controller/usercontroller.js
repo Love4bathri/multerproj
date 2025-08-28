@@ -50,7 +50,7 @@ route.post("/role", upload, async (req, res) => {
         res.send(data);
     } catch (err) {
         console.error("Upload error:", err);
-        res.status(500).send("Error saving data with image");
+        res.status(500).json("Error saving data with image");
     }
 });
 
@@ -60,7 +60,7 @@ route.put("/role/:_id", async (req, res) => {
         const updated = await usermodel.findByIdAndUpdate(req.params._id, req.body, { new: true });
         res.send(updated);
     } catch (err) {
-        res.status(500).send("Error updating data");
+        res.status(500).json("Error updating data");
     }
 });
 

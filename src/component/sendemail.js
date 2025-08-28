@@ -28,11 +28,8 @@ const SendEmail = () => {
         if (password !== repeatPassword) {
             setMsg("Passwords do not match");
             return;
-        }
-
-        setMsg("Data submitted successfully");
-
-        setTimeout(() => {
+        } 
+          setTimeout(() => {
             setMsg("");
         }, 2000);
         // Clear previous messages

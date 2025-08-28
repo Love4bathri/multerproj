@@ -21,6 +21,7 @@ import SendEmail from './component/sendemail';
           <Route path="/" element={<Home />} />
           <Route path="/upload" element={<ImageUpload />} />
           <Route path="/card" element={<Card />} />
+          <Route path="/card/:pid" element={<Card />} />
           <Route path="/email" element={<SendEmail />} />
         </Route>
       </Routes>
