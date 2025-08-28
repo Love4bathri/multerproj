@@ -8,12 +8,14 @@ import Home from './component/home';
 import {BrowserRouter, Route , Routes} from "react-router-dom";
 
 import SendEmail from './component/sendemail';
+import { ThemeProvider } from './component/Themecontext';
  
 
 
  function App() {
   return (
     <> 
+    <ThemeProvider>
      <BrowserRouter>
      <NavbarComponent/>
       <Routes>
@@ -26,6 +28,7 @@ import SendEmail from './component/sendemail';
         </Route>
       </Routes>
       </BrowserRouter>
+      </ThemeProvider>
 
    </> 
       );

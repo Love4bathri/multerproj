@@ -1,7 +1,9 @@
-import React from 'react'
+import React, {lazy, Suspense} from 'react';
 import ImageUpload from './imageupload';
-import Card from './card';
 import SendEmail from './sendemail';
+const Card = lazy(() => import('./card'));
+import Spinner from 'react-bootstrap/Spinner';
+ 
 function Home() {
   return (
     <div>
@@ -51,8 +53,10 @@ function Home() {
     </button>
   </div>
 </div>
-         <ImageUpload/>     
-        <Card/>
+         <ImageUpload/>    
+          <Suspense fallback={<Spinner animation="border" variant="dark" />}>
+          <Card/>
+          </Suspense>
         <SendEmail/>
   </div>
   )

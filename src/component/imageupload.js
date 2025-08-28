@@ -50,8 +50,7 @@ function ImageUpload() {
       console.error("Error uploading file:", err);
       setMsg("Error uploading file");
     }
-
-
+ 
   }
   return (
      
