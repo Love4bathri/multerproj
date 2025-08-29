@@ -67,6 +67,28 @@ route.post("/email", async (req, res) => {
     res.status(500).json("Error processing request");
   }
 });
+//login api
+
+route.post("/login" , async (req, res)=>{
+
+const {email , password} = req.body;
+if(!email || !password){
+  return res.status(400).json("Please fill all the fields");
+}
+  try{
+    const user = await emailn.findOne({email:email});
+    if(!user){
+      return res.status(400).json("User not found");
+    }
+    if(user.password !== password){
+      return res.status(400).json("Invalid credentials");
+    }
+    data.save();
+    res.status(200).json({message: "Login successful"});
+  }catch(err){
+    console.error("Error during login:", err);
+    res.status(500).json("Error during login");
+ }});
 
 route.delete("/email/:_id", async (req, res) => {
   try {
